@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FaxReader.Program": {
+      "commandName": "Project",
+      "commandLineArgs": "accounts.txt -G -S 123456789 -N 500"
+    }
+  }
+}

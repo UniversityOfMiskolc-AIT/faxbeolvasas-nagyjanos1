@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaxReader.Program", "FaxReader\FaxReader.Program.csproj", "{A97678EA-68B6-45AB-BFD8-E5E51E120EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaxReader.Lib", "FaxReader.Lib\FaxReader.Lib.csproj", "{E14B8B1B-2019-47D7-A587-E598F0F391B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaxReader.Lib.Test", "FaxReader.Lib.Test\FaxReader.Lib.Test.csproj", "{59CA6CF9-517D-409B-91C3-65C7378BDD90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A97678EA-68B6-45AB-BFD8-E5E51E120EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97678EA-68B6-45AB-BFD8-E5E51E120EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97678EA-68B6-45AB-BFD8-E5E51E120EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97678EA-68B6-45AB-BFD8-E5E51E120EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14B8B1B-2019-47D7-A587-E598F0F391B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14B8B1B-2019-47D7-A587-E598F0F391B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14B8B1B-2019-47D7-A587-E598F0F391B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14B8B1B-2019-47D7-A587-E598F0F391B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59CA6CF9-517D-409B-91C3-65C7378BDD90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CA6CF9-517D-409B-91C3-65C7378BDD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CA6CF9-517D-409B-91C3-65C7378BDD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CA6CF9-517D-409B-91C3-65C7378BDD90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA425290-8365-4605-92BA-B22C5358EB6D}
+	EndGlobalSection
+EndGlobal
