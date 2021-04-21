@@ -3,6 +3,9 @@ using System.Text;
 
 namespace FaxReader.Lib
 {
+    /// <summary>
+    /// Számla
+    /// </summary>
     public class AccountService
     {
         private readonly IAccountFactory _accountFactory;
@@ -12,17 +15,14 @@ namespace FaxReader.Lib
             _accountFactory = accountFactory;
         }
 
-        public IEnumerable<string> GenerateInDigitFormat(int? startNumber = null, int? accountCnt = null)
+        /// <summary>
+        /// Digit formátumban legenerálja a számlákat a megadott paraméterek alapján.
+        /// </summary>
+        /// <param name="startNumber">Kezdő érték</param>
+        /// <param name="accountCnt">Generálandó számlák száma</param>
+        /// <returns>Digit formátumban a számlák sorai</returns>
+        public IEnumerable<string> GenerateInDigitFormat(int? startNumber = 100000000, int? accountCnt = 500)
         {
-            if (startNumber == null) 
-            {
-                startNumber = 100000000;
-            }
-            if (accountCnt == null)
-            {
-                accountCnt = 500;
-            }
-
             var allAccount = new List<string>();
             var accountGenerator = new AccountGenerator(startNumber.Value, accountCnt.Value, true);
             accountGenerator.Generate();
@@ -36,6 +36,11 @@ namespace FaxReader.Lib
             return allAccount;
         }
 
+        /// <summary>
+        /// Digit formátumú nyerssorokat parsolja át, és számal objektumokat hoz létre.
+        /// </summary>
+        /// <param name="digitAccounts">Digit formátumú nyrs számla sorok.</param>
+        /// <returns>A létrehozott számla objektumok.</returns>
         public IEnumerable<Account> ParseBankAccounts(string[] digitAccounts)
         {            
             for (var i = 0; i < digitAccounts.Length; i += 3)
@@ -44,6 +49,13 @@ namespace FaxReader.Lib
             }
         }
 
+        /// <summary>
+        /// A létrehozott számla objektumokat validálja, a végeredménynek megfelelően 
+        /// - ERR jelzi a számla után, a checksum értéke nem megfelelő,
+        /// - ILL jelzi, ha nem felismerhető számot tartalmazott.
+        /// </summary>
+        /// <param name="accounts">Számla objektumok.</param>
+        /// <returns>A levalidált számlaszámok a megfelelő validációs jelzésekkel.</returns>
         public IEnumerable<string> ValidateAccounts(IEnumerable<Account> accounts)
         {
             var stringBuilder = new StringBuilder();

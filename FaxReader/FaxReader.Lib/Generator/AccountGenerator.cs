@@ -3,14 +3,26 @@ using System.Collections.Generic;
 
 namespace FaxReader.Lib
 {
+    /// <summary>
+    /// Számlaszámokat fax formátumba generáló osztály.
+    /// </summary>
     internal class AccountGenerator
     {
         private readonly int _startNumber;
         private readonly int _count;
         private readonly bool _hasGeneratedIllegalChar;
 
+        /// <summary>
+        /// A legenerált számlaszámok fax formátumban.
+        /// </summary>
         public List<string> Accounts { get; private set; }
 
+        /// <summary>
+        /// privát adattagok és az Accounts Property inicializálása.
+        /// </summary>
+        /// <param name="startNumber">A kezdeti szám, amelytől indul a generálás.</param>
+        /// <param name="count">A generálandó számlaszámok száma.</param>
+        /// <param name="hasGeneratedIllegalChar">Tartalmazzon-e illegális karaktereket a generált számlaszám.</param>
         public AccountGenerator(int startNumber, int count, bool hasGeneratedIllegalChar)
         {
             _startNumber = startNumber;
@@ -19,6 +31,10 @@ namespace FaxReader.Lib
             Accounts = new List<string>();
         }
 
+        /// <summary>
+        /// Számlaszámok legenerálása.
+        /// Amennyiben a _hasGeneratedIllegalChar=true 75 százalékos valószínűséggel generál hibás ellenőrzőszám összegű számlaszámot.
+        /// </summary>
         public void Generate()
         {
             var count = 0;
